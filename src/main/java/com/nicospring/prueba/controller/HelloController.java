@@ -60,6 +60,36 @@ public class HelloController {
     }
     
     
+    /*=========EJERCICIO 1 PathVariable=========*/
+    //Suma de 2 numeros
+    @GetMapping("/ejer1/{n1}/{n2}")
+    public String ejercicio1(@PathVariable int n1,
+                             @PathVariable int n2){
+        
+        int suma = n1 + n2;
+        return "La suma de: "+n1+" + "+n2+"   es: "+ suma;
+    }
+    
+    
+    /*=========EJERCICIO 2 RequestParam=========*/
+    //Devolver el estado de masa corporal de la persona
+    @GetMapping("/ejer2")
+    public String ejercicio2(@RequestParam double peso){
+        String resultado = null;
+        
+        if(peso >= 1 && peso <= 18.5){
+            resultado = "Peso Insuficiente";
+        }
+        else if(peso >= 18.6 && peso <= 24.9){
+                    resultado = "Peso normal";}
+        else if(peso >= 25 && peso <= 29.9){
+                    resultado = "Sobrepeso";}
+        else if(peso >= 30){
+                    resultado = "Obesidad";}
+        
+        return resultado;
+    }
+    
     
     
 }
