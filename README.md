@@ -1,1 +1,1 @@
-# prueba
+#@GetMapping +PathVariable + RequestParam + Ejercicios
